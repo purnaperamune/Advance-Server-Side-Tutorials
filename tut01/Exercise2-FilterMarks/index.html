@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher Marks Student Finder</title>
+</head>
+<body>
+    <h2>Search students with more marks than you</h2>
+    <form action="studentMarks.php" method="post">
+        <label for="mark">Enter a Mark:</label>
+        <!-- Using type as number,min and max without validating manually. -->
+        <input type="number" id="mark" name="mark" min="0" max="100" required>
+        <br>
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>
