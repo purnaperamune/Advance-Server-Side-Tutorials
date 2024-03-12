@@ -6,4 +6,8 @@ class StudentController extends CI_Controller {
 	{
 		$this->load->view('student_details');
 	}
+
+	public function bookInfo() {
+		$this->load->view('book_info', array('title' => 'PHP for Experts','author' => 'Dr X'));
+	}
 }
