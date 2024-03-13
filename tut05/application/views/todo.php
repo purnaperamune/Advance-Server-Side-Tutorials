@@ -6,11 +6,18 @@
     <title>To Do App</title>
 </head>
 <body>
-<h1>To-Do List</h1>
+    <h1>To-Do List</h1>
     <form action="<?php echo site_url('todo/add');?>" method="post">
         <label for="action_title">Add New To-Do :</label>
         <input type="text" id="action_title" name="action_title">
         <button type="submit">Add Action</button>
     </form>
+
+    <h2>Existing To-Do Actions:</h2>
+    <ul>
+        <?php foreach ($actions as $action): ?>
+            <li><?php echo $action->action_title; ?></li>
+        <?php endforeach; ?>
+    </ul>
 </body>
 </html>

@@ -14,8 +14,12 @@ class ToDoModel extends CI_Model {
         );
 
         $this->db->insert('todo_actions', $data);
-        return $this->db->insert_id(); // Return the ID of the inserted record
+        return $this->db->insert_id();
     }
 
-    // Add other methods for fetching To-Do actions from the database as needed
+    public function getToDos($user_id = 0) {
+        $this->db->where('user_id', $user_id);
+        $query = $this->db->get('todo_actions');
+        return $query->result(); 
+    }
 }
