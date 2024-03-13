@@ -14,10 +14,17 @@ class MoviesController extends CI_Controller {
         $this->load->view('search_movie');
     }
 
-    public function search()
+    public function searchByGenre()
     {
         $genre = $this->input->post('genre');
         $data['movies'] = $this->MoviesModel->getMoviesByGenre($genre);
+        $this->load->view('movie_result', $data);
+    }
+
+    public function searchByTitle()
+    {
+        $title = $this->input->post('title');
+        $data['movies'] = $this->MoviesModel->getMoviesByTitle($title);
         $this->load->view('movie_result', $data);
     }
 

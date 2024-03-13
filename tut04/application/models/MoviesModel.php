@@ -21,6 +21,19 @@ class MoviesModel extends CI_Model {
         }
     }
 
+    public function getMoviesByTitle($title) {
+        $this->db->select('*');
+        $this->db->from('films');
+        $this->db->like('title', $title);
+        $query = $this->db->get();
+    
+        if ($query->num_rows() > 0) {
+            return $query->result_array();
+        } else {
+            return array();
+        }
+    }
+
     public function getAllMovies() {
         $query = $this->db->get('films');
         if ($query->num_rows() > 0) {
