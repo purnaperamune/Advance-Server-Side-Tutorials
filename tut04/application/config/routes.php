@@ -2,7 +2,9 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['default_controller'] = 'welcome';
-$route['test'] = 'TestController/index';
+$route['movie'] = 'MoviesController/index';
+$route['movie/search'] = 'MoviesController/search';
+$route['movie/all'] = 'MoviesController/allmovies';
 
 
 $route['404_override'] = '';
